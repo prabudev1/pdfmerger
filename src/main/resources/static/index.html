@@ -3,8 +3,72 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>PDF Merger</title>
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/jquery-ui-v12.1.css">
+		<link rel="stylesheet" href="assets/css/dropzone.css">
 	</head>
 	<body>
-		List Here
+		
+		<div class="dev-container">
+			<div class="header">
+				<h1 class="heading">PDF Merger</h1>
+				<p class="heading-det col-md-10">
+					A free and easy way to combine PDF files into one PDF in just seconds. No matter what operating system or device you're using, as long as you have an Internet connection and are using a device capable of uploading and downloading files, then you can easily combine PDF files.
+				</p>
+				<hr class="my-4">
+				<h2 class="mb-0 "></h2>
+			</div>
+			<div class="body">
+				<div class="row">
+					<div class="col-sm-6 col-md-6">
+						<ul class="list-unstyled">
+							<li class="media">
+								<div class="step-num-circle">1</div>
+								<div class="media-body">
+									Select up to 20 PDF files and images from your computer or drag them to the drop area.
+								</div>
+							</li>
+							<li class="media">
+								<div class="step-num-circle">2</div>
+								<div class="media-body">
+									Click on and drag an element to a new spot within the list, and the other items will adjust to fit.  
+								</div>
+							</li>
+							<li class="media">
+								<div class="step-num-circle">3</div>
+								<div class="media-body">
+									When you are ready to proceed, click "Merge & Download" button to download your merged PDFs to your computer.
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-sm-6 col-md-6 ">
+						<div class="row">
+							<form action="/file-upload" class="dropzone" id="myDropzoneElementId">
+								<div class="dz-message needsclick">Drop files here or click to upload.<br></div>
+							</form>
+							<div class="dz-message-bottom">Drop files here or click to upload.<br></div>
+						</div>
+						<div class="row ">
+							<div class="row col-sm-6 py-3" >
+								<input type="submit" value="Merge & Download" class="btn btn-primary btn-block" id="mergepdf">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center footer-para">
+					<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>&nbsp;GPWARE</p>
+				</div>
+			</div>
+		</div>
+	  	<script src="assets/js/jquery-1.12.4.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery-ui-v12.1.js"></script>
+		<script src="assets/js/dropzone.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
