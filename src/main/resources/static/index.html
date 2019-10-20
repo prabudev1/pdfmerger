@@ -52,7 +52,12 @@
 						</div>
 						<div class="row ">
 							<div class="row col-sm-6 py-3" >
-								<input type="submit" value="Merge & Download" class="btn btn-primary btn-block" id="mergepdf">
+								<form action="/pdf/merge" method="post" enctype="multipart/form-data">
+									<input type="file" name="files"/>
+									<input type="file" name="files"/>
+									<input type="file" name="files"/>
+									<input type="submit" value="Merge & Download" class="btn btn-primary btn-block" id="mergepdf">
+								</form>
 							</div>
 						</div>
 					</div>
