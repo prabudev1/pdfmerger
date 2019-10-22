@@ -729,7 +729,7 @@ scale
 
 
 .dropzone.dz-clickable {
-	cursor: pointer;
+	cursor: default;
 }
 
 .dropzone.dz-clickable * {
@@ -738,7 +738,7 @@ scale
 
 .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message *
 	{
-	cursor: pointer;
+	cursor: default;
 }
 
 .dropzone.dz-started .dz-message {
@@ -762,11 +762,10 @@ scale
 
 .dropzone .dz-preview {
 	position: relative;
-	display: inline-block;
+	display: block;
 	vertical-align: top;
-	min-height: 100px;
-	cursor: pointer;
-	width: 100%;
+	cursor: default;
+    
 }
 
 .dropzone .dz-preview:hover {
@@ -817,18 +816,17 @@ scale
 
 .dropzone .dz-preview .dz-details {
 	z-index: 20;
-	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
 	font-size: 10px;
 	min-width: 100%;
 	max-width: 100%;
-	padding: 2em;
 	text-align: left;
 	color: rgba(0, 0, 0, 0.9);
-	line-height: 150%;
 	
+    padding: 1em;
+    margin-bottom: 10px;
 	border-radius: 20px;
 	background: #999;
 	background: #F0F0F0;
@@ -1038,15 +1036,23 @@ scale
     text-transform: lowercase;
     cursor: pointer;
 }
-
 .dz-message-bottom {
 	text-align: center;
-    margin: -2em 8em;
+    margin-top: -2em;
+    width: 100%;
     color: #707273;
     font-size: 13px;
     display: none;
 }
-
+.dz-upoad-button {
+	text-align: right;
+    color: #707273;
+    font-size: 13px;
+    position: relative;
+    display: block;
+    z-index: 10;
+    /* bottom: 0;
+}
 .dz-filename span, .dz-size span {
 	padding-left: 0px !important;
 }

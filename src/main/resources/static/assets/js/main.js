@@ -19,11 +19,6 @@ $(document).ready(function() {
 	$(".dev-container").removeClass("body-opacity");
 	$(".loader-box,.message-box").hide();
 	
-	$("#dropzoneSubmit").click(function(){
-		$(".dev-container").addClass("body-opacity");
-		$(".loader-box ").show();
-		//alert(Dropzone.options.myDropzoneElementId.getAcceptedFiles().length);
-	});
 	var myDropzone = new Dropzone("#fileDropzoneElement", {
         url: "/pdf/merge",
         paramName: "files",
@@ -34,13 +29,14 @@ $(document).ready(function() {
         maxFiles: 10,
         acceptedFiles: ".pdf",
         addRemoveLinks: false,
+        clickable: ".upoad-btn",
         // Language Strings
         dictFileTooBig: "File is to big ({{filesize}}mb). Max allowed file size is {{maxFilesize}}mb",
         dictInvalidFileType: "Invalid File Type",
         dictCancelUpload: "Cancel",
         dictRemoveFile: "Remove",
         dictMaxFilesExceeded: "Only {{maxFiles}} files are allowed",
-        dictDefaultMessage: "Drop files here to upload",
+        dictDefaultMessage: "Drop files here or click to <a href='javascript:void(0)' class='upoad-btn'>upload</a>",
     });
 	
 });
@@ -65,6 +61,14 @@ Dropzone.options.fileDropzoneElement = {
 	            e.preventDefault();
 	            e.stopPropagation();
 	            
+	            if ($('input[name ="fileOrder"]').length < 2 ) {
+	            	alert("OOPS, Please choose atleast 2 files to merge");
+	            	return;
+	            }
+
+	            $(".dev-container").addClass("body-opacity");
+	    		$(".loader-box ").show();
+	    		
 	            if (myDropzone.files != "") {
 	                myDropzone.processQueue();
 	            } else {
@@ -74,7 +78,20 @@ Dropzone.options.fileDropzoneElement = {
 	        });
 	        // on add file
 	        this.on("addedfile", function(file) {
+	        	$("#fileDropzoneElement").sortable({
+        			revert : true
+        		});
+	        	$(".dropzone.dz-started .dz-message").hide();
+	        	$(".dz-message-bottom").show();
 	            // console.log(file);
+	        });
+	        this.on("drop", function(file, response) {
+	        	$("#fileDropzoneElement").sortable({
+        			revert : true
+        		});
+	        	$(".dropzone.dz-started .dz-message").hide();
+	        	$(".dz-message-bottom").show();
+	            // console.log(response);
 	        });
 	     // on error
 	        this.on("addedfiles", function(file, response) {
@@ -98,15 +115,17 @@ Dropzone.options.fileDropzoneElement = {
 	            // submit form
 	            $("#fileDropzoneForm").submit();
 	            $(".loader-box ").hide();
-	            $(".message-box").fadeIn(800);
+	            $(".message-box").fadeIn(1500);
 	            $(".dropzone.dz-started .dz-message").show();
 	    		$(".dz-message-bottom").hide();
+	    		
 	            this.removeAllFiles(true);
+	            
 	            setTimeout(function(){
 	            	$(".message-box").fadeOut("fast");
 	            	$(".dev-container").removeClass("body-opacity");
 	 	        	$(".loader-box ").hide();
-	            }, 800);
+	            }, 1500);
 	           
 	        });
 	    }

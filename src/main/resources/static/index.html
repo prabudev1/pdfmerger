@@ -13,9 +13,6 @@
 		<link rel="stylesheet" href="assets/css/dropzone.css">
 	</head>
 	<body>
-		<div class="loader-box "><div class="loader"></div></div>
-		<div class="message-box">Ohh Yaa, your merged file <br>downloaded successfully. :-)</div>
-		
 		<div class="dev-container body-opacity">
 			<div class="header">
 				<h1 class="heading">PDF Merger</h1>
@@ -32,7 +29,7 @@
 							<div class="media">
 								
 								<div class="media-body">
-									<h6 class="mt-0"><span class="step-num-circle"><span class="icon-upload"></span></span>Choose</h6>
+									<h6 class="mt-0"><a href='javascript:void(0)' class='step-num-circle upoad-btn h6'><span class="icon-upload"></span>&nbsp;Choose</a></h6>
 									Select up to 20 PDF files and images from your computer or drag them to the drop area.
 								</div>
 							</div>
@@ -51,15 +48,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-6 ">
+					<div class="col-sm-5 col-md-5">
 						<form action="/pdf/download" method="post" enctype="multipart/form-data" id="fileDropzoneForm" >
-							<div class="row">
-								<div id="fileDropzoneElement" class="dropzone"></div>
-								<div class="dz-message-bottom">Drop files here or click to upload.<br></div>
-							</div>
-							<div class="row ">
-								<div class="row col-sm-6 py-3" >
-									<input type="button" value="Merge & Download" class="btn btn-primary btn-block" id="dropzoneSubmit" >
+							<div class="container">
+								<div class="row">
+									<div id="fileDropzoneElement" class="dropzone"></div>
+									<div class="dz-message-bottom">Drop files here or click to <a href='javascript:void(0)' class='upoad-btn'>upload</a><br></div>
+								</div>
+								<div class="row" >
+									<div class=" py-3" >
+										<input type="button" value="Merge & Download" class="btn btn-primary btn-block" id="dropzoneSubmit" >
+									</div>
 								</div>
 							</div>
 						</form>
@@ -72,6 +71,9 @@
 				</div>
 			</div>
 		</div>
+		<div class="loader-box" style="display: none;"><div class="loader"></div></div>
+		<div class="message-box" style="display: none;">Ohh Yaa, your merged file <br>downloaded successfully. :-)</div>
+		
 	  	<script src="assets/js/jquery-1.12.4.js"></script>
 		<script src="assets/js/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
