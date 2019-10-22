@@ -4,6 +4,8 @@
 		<meta charset="ISO-8859-1">
 		<title>PDF Merger</title>
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/icomoon.css">
+		
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/jquery-ui-v12.1.css">
 		<link rel="stylesheet" href="assets/css/dropzone.css">
@@ -22,26 +24,28 @@
 			<div class="body">
 				<div class="row">
 					<div class="col-sm-6 col-md-6">
-						<ul class="list-unstyled">
-							<li class="media">
-								<div class="step-num-circle">1</div>
+						<div class="list-unstyled">
+							<div class="media">
+								
 								<div class="media-body">
+									<h6 class="mt-0"><span class="step-num-circle"><span class="icon-upload"></span></span>Upload</h6>
 									Select up to 20 PDF files and images from your computer or drag them to the drop area.
 								</div>
-							</li>
-							<li class="media">
-								<div class="step-num-circle">2</div>
+							</div>
+							<div class="media">
 								<div class="media-body">
+									<h6 class="mt-0"><span class="step-num-circle"><span class="icon-sort"></span></span>Order</h6>
 									Click on and drag an element to a new spot within the list, and the other items will adjust to fit.  
 								</div>
-							</li>
-							<li class="media">
-								<div class="step-num-circle">3</div>
+							</div>
+							<div class="media">
+								
 								<div class="media-body">
+									<h6 class="mt-0"><span class="step-num-circle"><span class="icon-merge_type"></span></span>Merge</h6>
 									When you are ready to proceed, click "Merge & Download" button to download your merged PDFs to your computer.
 								</div>
-							</li>
-						</ul>
+							</div>
+						</div>
 					</div>
 					<div class="col-sm-6 col-md-6 ">
 						<form action="/pdf/download" method="post" enctype="multipart/form-data" id="fileDropzoneForm" >
@@ -60,7 +64,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center footer-para">
-					<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>&nbsp;GPWARE</p>
+					<p>&copy; <script>document.write(new Date().getFullYear());</script>&nbsp;GPWARE</p>
 				</div>
 			</div>
 		</div>
