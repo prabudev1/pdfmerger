@@ -14,7 +14,14 @@ $(document).ready(function() {
 //	  myDropzone.on("addedfile", function(file) {
 //		  
 //	  });
-	$("#mergepdf").click(function(){
+	
+	
+	$(".dev-container").removeClass("body-opacity");
+	$(".loader-box,.message-box").hide();
+	
+	$("#dropzoneSubmit").click(function(){
+		$(".dev-container").addClass("body-opacity");
+		$(".loader-box ").show();
 		//alert(Dropzone.options.myDropzoneElementId.getAcceptedFiles().length);
 	});
 	var myDropzone = new Dropzone("#fileDropzoneElement", {
@@ -62,7 +69,7 @@ Dropzone.options.fileDropzoneElement = {
 	                myDropzone.processQueue();
 	            } else {
 	                $("#fileDropzoneForm").submit();
-	                window.reload();
+	                location.href = "/";
 	            }
 	        });
 	        // on add file
@@ -90,6 +97,17 @@ Dropzone.options.fileDropzoneElement = {
 	        this.on("successmultiple", function(file) {
 	            // submit form
 	            $("#fileDropzoneForm").submit();
+	            $(".loader-box ").hide();
+	            $(".message-box").fadeIn(800);
+	            $(".dropzone.dz-started .dz-message").show();
+	    		$(".dz-message-bottom").hide();
+	            this.removeAllFiles(true);
+	            setTimeout(function(){
+	            	$(".message-box").fadeOut("fast");
+	            	$(".dev-container").removeClass("body-opacity");
+	 	        	$(".loader-box ").hide();
+	            }, 800);
+	           
 	        });
 	    }
 	};

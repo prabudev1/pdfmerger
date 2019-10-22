@@ -10002,11 +10002,12 @@ textarea.form-control {
   background: url('/assets/img/bg-1.jpg') 100%;
  }
  .heading {
-	font-size: 2rem;
+	font-size: 32px;
 	font-weight: 800;
     color: #ffba03 ;
     color: #fd533a;
-    font-family: sans-serif;
+	font-family: 'Days One', sans-serif;
+    text-transform: uppercase;
 }
 .dropzone {
 	padding: 20px 20px;
@@ -10021,3 +10022,60 @@ textarea.form-control {
     background: #ffba03 !important;
     border: 1px solid #ffba03 !important;
     color: #fff !important; }
+    
+.body-opacity {
+	
+	    opacity: 0.4;
+}
+.message-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation-delay: 1s;
+    margin: 10px auto;
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    
+	font-size: 24px;
+	font-weight: 700;
+    color: #10a51b;
+}
+.loader-box {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation-delay: 1s;
+    margin: 10px auto;
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #fd533a;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}  
