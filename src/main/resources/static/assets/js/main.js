@@ -41,16 +41,38 @@ $(document).ready(function() {
 	
 });
 
-
 function fileRemove(thisObj) {
 	$(thisObj).parent().remove();
+	showDropMessage();
+}
+
+function showError(errMessage) {
+	$('#errMessageDiv').text(errMessage);
+	$('#messageModal').modal({
+		  keyboard: true
+	});
+}
+function onSuccess () {
+	if ($(".dz-error").length > 0 ) {
+		showError("Please choose vaid file.");
+		$(".dz-error").remove();
+	}
+	
+	showDropMessage();
+	$("#fileDropzoneElement").sortable({
+		revert : true
+	});
+	
+}
+function showDropMessage () {
 	if ($(".dropzone .dz-preview").length == 0 ) {
 		$(".dropzone.dz-started .dz-message").show();
 		$(".dz-message-bottom").hide();
+	} else {
+		$(".dropzone.dz-started .dz-message").hide();
+		$(".dz-message-bottom").show();
 	}
-	
 }
-
 Dropzone.options.fileDropzoneElement = {
 	    // The setting up of the dropzone
 	    init: function() {
@@ -62,7 +84,7 @@ Dropzone.options.fileDropzoneElement = {
 	            e.stopPropagation();
 	            
 	            if ($('input[name ="fileOrder"]').length < 2 ) {
-	            	alert("OOPS, Please choose atleast 2 files to merge");
+	            	showError("Please choose atleast two files to merge");
 	            	return;
 	            }
 
@@ -78,32 +100,23 @@ Dropzone.options.fileDropzoneElement = {
 	        });
 	        // on add file
 	        this.on("addedfile", function(file) {
-	        	$("#fileDropzoneElement").sortable({
-        			revert : true
-        		});
-	        	$(".dropzone.dz-started .dz-message").hide();
-	        	$(".dz-message-bottom").show();
+	        	onSuccess();
 	            // console.log(file);
 	        });
 	        this.on("drop", function(file, response) {
-	        	$("#fileDropzoneElement").sortable({
-        			revert : true
-        		});
-	        	$(".dropzone.dz-started .dz-message").hide();
-	        	$(".dz-message-bottom").show();
+	        	onSuccess();
 	            // console.log(response);
 	        });
 	     // on error
 	        this.on("addedfiles", function(file, response) {
-	        	$("#fileDropzoneElement").sortable({
-        			revert : true
-        		});
-	        	$(".dropzone.dz-started .dz-message").hide();
-	        	$(".dz-message-bottom").show();
+	        	onSuccess();
 	            // console.log(response);
 	        });
+
 	        // on error
 	        this.on("error", function(file, response) {
+	        	if (!file.accepted) 
+	        		this.removeFile(file);
 	            // console.log(response);
 	        });
 	        // on start
