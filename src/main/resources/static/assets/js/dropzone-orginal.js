@@ -765,7 +765,6 @@ var Dropzone = function (_Emitter) {
               var node = _ref3;
 
               node.textContent = file.name;
-              alert(this.files.length);
               node.innerHTML = file.name + '<input type="hidden" name="fileOrder" value="' + (this.files.length  - 1 )+'" />';
             }
             for (var _iterator4 = file.previewElement.querySelectorAll("[data-dz-size]"), _isArray4 = true, _i4 = 0, _iterator4 = _isArray4 ? _iterator4 : _iterator4[Symbol.iterator]();;) {
