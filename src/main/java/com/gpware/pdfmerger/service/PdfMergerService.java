@@ -2,7 +2,6 @@ package com.gpware.pdfmerger.service;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.List;
 
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
@@ -12,10 +11,11 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class PdfMergerService {
 
-	public byte[] mergeFies(List<MultipartFile> files) throws IOException {
+	public byte[] mergeFies(List<MultipartFile> files, List<String> order) throws IOException {
 		ByteArrayOutputStream destStream = new ByteArrayOutputStream();
 		PDFMergerUtility pdfMerger = new PDFMergerUtility();
-		for (MultipartFile file : files) {
+		for (String orderIndex : order) {
+			MultipartFile file = files.get(Integer.valueOf(orderIndex));
 			pdfMerger.addSource(file.getInputStream());
 		}
 		pdfMerger.setDestinationStream(destStream);
