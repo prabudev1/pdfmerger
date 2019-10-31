@@ -3,15 +3,13 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <meta name='title' content='PDF Merger'>
-	    <meta name='description' content=''>
-	    <meta name='url' content=''>
-	    <meta name='keywords' content=''>
-		
-		<meta property='og:title' content='PDF Merger' />
-		<meta property='og:type' content='Website' />
-		<meta property='og:url' content='' />
-		<meta property='og:description' content='' />
+	    
+		<meta name="title" property='og:title' content='PDF Merger' />
+		<meta name='type' property='og:type' content='Website' />
+		<meta name='url' property='og:url' content='http://pdfmerger.gpwares.com/' />
+		<meta name='description' property='og:description' content='A free and easy way to combine PDF files into one PDF in just secon' />
+		<meta name="image"  property="og:image" content="http://gpwares.com/assets/images/logo.png" />
+		<meta name='keywords' property="og:keywords" content="GPWARE, PDF, Merge, Combine, Free Merger, Fast, No Storage" >
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>PDF Merger</title>
@@ -23,7 +21,19 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/jquery-ui-v12.1.css">
 		<link rel="stylesheet" href="assets/css/dropzone.css">
-	</head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151241112-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+		
+			gtag('config', 'UA-151241112-1');
+		</script>
+</head>
 	<body>
 		<div class="dev-container body-opacity">
 			<div class="header">
@@ -42,7 +52,7 @@
 								
 								<div class="media-body">
 									<h6 class="mt-0"><a href='javascript:void(0)' class='step-num-circle upoad-btn h6'><span class="icon-upload"></span>&nbsp;Choose</a></h6>
-									Select up to 20 PDF files and images from your computer or drag them to the drop area.
+									Select up to 20 PDF files from your computer or drag them to the drop area.
 								</div>
 							</div>
 							<div class="media">
@@ -79,7 +89,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center footer-para">
-					<p>&copy;&nbsp;GPWARE</p>
+					<p>&copy;&nbsp;<a href="http://gpwares.com/" target="_blank">GPWARE</a></p>
 				</div>
 			</div>
 		</div>
@@ -103,11 +113,11 @@
 			</div>
 		</div>
 
-	<script src="assets/js/jquery-1.12.4.js"></script>
+		<script src="assets/js/jquery-1.12.4.js"></script>
 		<script src="assets/js/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/jquery-ui-v12.1.js"></script>
 		<script src="assets/js/dropzone-orginal.js"></script>
 		<script src="assets/js/main.js"></script>
-	</body>
+</body>
 </html>
